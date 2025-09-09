@@ -117,6 +117,16 @@ elif page == "Train Models":
 elif page == "Risk & Pricing Dashboard":
     st.subheader("3) Risk scoring and premiums")
 
+    # show last metrics if available
+    metrics_path = "docs/metrics.json"
+    if os.path.exists(metrics_path):
+        with open(metrics_path, "r") as f:
+            try:
+                st.markdown("#### Last training metrics:")
+                st.json(json.load(f))
+            except Exception:
+                pass
+
     if st.session_state.features is None and os.path.exists("data/features.csv"):
         st.session_state.features = pd.read_csv("data/features.csv")
 

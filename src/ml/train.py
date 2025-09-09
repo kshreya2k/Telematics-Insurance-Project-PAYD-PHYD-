@@ -11,10 +11,13 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import accuracy_score, roc_auc_score
 
+# in src/ml/train.py, near the top
 FEATURES = [
     "total_miles", "records", "mean_speed", "std_speed", "accel_mean", "accel_var",
-    "harsh_rate", "pct_night", "road_type_highway", "road_type_rural", "road_type_urban",
+    "harsh_rate", "pct_night", "pct_peak",
+    "road_type_highway", "road_type_rural", "road_type_urban",
 ]
+
 TARGET = "had_claim"
 
 
