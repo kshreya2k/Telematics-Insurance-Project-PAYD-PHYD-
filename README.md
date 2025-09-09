@@ -1,7 +1,7 @@
 # Telematics-Insurance-Project-PAYD-PHYD-
-A simple telematics-based auto insurance solution that accurately captures driving behavior and vehicle usage data and integrates this data into a dynamic insurance pricing model.
+A simple Proof of Concept(POC) for telematics-based auto insurance solution that accurately captures driving behavior and vehicle usage data and integrates this data into a dynamic insurance pricing model. 
 
-**Goal:** A tiny, runnable POC for usage-based auto insurance with synthetic telematics, simple features, baseline models, and a Streamlit UI. No SQL, no Docker.
+**Goal:** A simple, clean and runnable POC for usage-based auto insurance with synthetic telematics, simple features, baseline models, and a Streamlit UI.
 
 ## Features
 - **Synthetic Data Generator**: Produces trip-level telematics data (timestamp, speed, accel, harsh braking, mileage, night flag, peak-hour flag, road type, GPS coords).  
@@ -13,7 +13,6 @@ A simple telematics-based auto insurance solution that accurately captures drivi
   - Train models and view evaluation metrics  
   - Explore driver scores, premiums, and charts  
   - Export priced table (`data/priced_table.csv`)  
-
 
 ## Machine Learning Models & Tools
 
@@ -34,11 +33,11 @@ The intention is to keep the models **simple and lightweight**:
 - Clear results (accuracy and AUC) for easy comparison.  
 
 ## Tools Used
-- **Python 3.11** with `venv` — minimal, reproducible environment.  
-- **Pandas & NumPy** — for data cleaning, feature engineering, and aggregation.  
-- **scikit-learn** — for model training, evaluation, and joblib persistence.  
-- **Streamlit** — quick and interactive dashboard to explore data, train models, and visualize premiums.  
-- **CSV/Parquet storage** — no database, keeps things simple and portable.  
+- **Python 3.11** with `venv`: minimal, reproducible environment.  
+- **Pandas & NumPy**: for data cleaning, feature engineering, and aggregation.  
+- **scikit-learn**: for model training, evaluation, and joblib persistence.  
+- **Streamlit**: quick and interactive dashboard to explore data, train models, and visualize premiums.  
+- **CSV/Parquet storage**: no database, keeps things simple and portable.  
 
 *This design choice keeps the POC **easy to run, understand, and extend**, while still proving the core concept of usage-based insurance with telematics data.*
 
