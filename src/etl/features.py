@@ -1,4 +1,3 @@
-# src/etl/features.py
 import argparse
 import os
 import pandas as pd
@@ -16,7 +15,7 @@ def build_features(trips: pd.DataFrame) -> pd.DataFrame:
     df["harsh_brake"] = df["harsh_brake"].astype(int)
     df["is_night"] = df["is_night"].astype(int)
     if "is_peak" not in df.columns:
-        df["is_peak"] = 0  # backward compatible if old trips.csv is used
+        df["is_peak"] = 0  # backward compatible if old trips.csv gets used
     df["is_peak"] = df["is_peak"].astype(int)
 
     # Aggregate per driver
@@ -26,7 +25,7 @@ def build_features(trips: pd.DataFrame) -> pd.DataFrame:
         mean_speed=("speed_mph", "mean"),
         std_speed=("speed_mph", "std"),
         accel_mean=("accel_ms2", "mean"),
-        accel_var=("accel_ms2", np.var),  # OK with pandas FutureWarning
+        accel_var=("accel_ms2", "var"),  # updated pandas' built-in var to avoid FutureWarning(note: as it was faced earlier)
         harsh_count=("harsh_brake", "sum"),
         night_count=("is_night", "sum"),
         peak_count=("is_peak", "sum"),
